@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: java-observability-platform
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:appdb}
+    username: ${DB_USERNAME:appuser}
+    password: ${DB_PASSWORD:appsecret}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  sql:
+    init:
+      mode: never
+
+app:
+  memcached:
+    host: ${MEMCACHED_HOST:localhost}
+    port: ${MEMCACHED_PORT:11211}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: when_authorized
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+server:
+  port: 8080
+  shutdown: graceful

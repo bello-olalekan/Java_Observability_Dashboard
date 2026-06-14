@@ -1,0 +1,31 @@
+.gradle/
+build/
+out/
+target/
+*.class
+*.jar
+
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform.lock.hcl
+
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore Kotlin plugin data
+.kotlin
