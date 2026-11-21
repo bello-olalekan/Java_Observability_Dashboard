@@ -176,14 +176,3 @@ Grafana is installed by Terraform through `kube-prometheus-stack`. Import the da
 `.github/workflows/ci.yml` builds and tests the Java app.
 
 `.github/workflows/deploy.yml` shows a deployment pipeline using GitHub OIDC, ECR, EKS, and Helm. Fill in the repository variables described in the workflow before using it.
-
-## Notes
-
-This project is intentionally practical but still a starter. Before using it for production, review:
-
-- RDS backup, encryption, maintenance, and high availability settings
-- Fine-grained IAM policies
-- Externalized secret management
-- Network ingress strategy such as AWS Load Balancer Controller
-- Autoscaling policies and resource sizing
-- Log shipping to CloudWatch, OpenSearch, or another log backend
